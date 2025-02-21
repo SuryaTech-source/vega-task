@@ -116,12 +116,11 @@ module.exports = function (app) {
 
     itemController.listItems = async (req, res) => {
         try {
-            const { search, sort = "asc", itemStatus, skip, limit, subCategoryName } = req.query; // Get search & sort from query params
-            const { sortField, sortno } = req.body
+            const { sort = "asc", itemStatus, skip, limit } = req.query; // Get search & sort from query params
+            const { sortField, sortno ,search,subCategoryName} = req.body
             // const items = await db.item.find({
             //     itemName: { $regex: search, $options: "i" } // Case-insensitive search
             // }).sort({ sortNo: sort === "desc" ? -1 : 1 });
-
 
 
             const matchCondition = {}
